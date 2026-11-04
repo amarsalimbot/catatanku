@@ -2747,13 +2747,13 @@ html[data-palette="ember"]{--accent:#f2bd72;--accent-2:#f29170;--chart-income:#e
       <button class="nav-item" data-view="budget" type="button"><span class="nav-ic">◎</span><span>Anggaran</span></button>
       <button class="nav-item" data-view="goals" type="button"><span class="nav-ic">◌</span><span>Target tabungan</span></button>
       <button class="nav-item" data-view="reports" type="button"><span class="nav-ic">▤</span><span>Laporan</span></button>
+      <button class="nav-item" data-view="laporanvisual" type="button"><span class="nav-ic">▧</span><span>Laporan visual</span></button>
       <div class="nav-label">Wawasan</div>
       <button class="nav-item" data-view="analytics" type="button"><span class="nav-ic">⌁</span><span>Analitik</span></button>
       <details class="nav-more">
         <summary class="nav-item"><span class="nav-ic">＋</span><span>Lainnya</span><span class="nav-chevron">⌄</span></summary>
         <div class="nav-more-list">
           <button class="nav-item" data-view="trend" type="button"><span class="nav-ic">⌁</span><span>Tren harian</span></button>
-          <button class="nav-item" data-view="laporanvisual" type="button"><span class="nav-ic">▧</span><span>Laporan visual</span></button>
           <button class="nav-item" data-view="catalog" type="button"><span class="nav-ic">▦</span><span>Kategori</span></button>
           <button class="nav-item" data-view="binance" type="button"><span class="nav-ic">◇</span><span>Aset digital</span></button>
           <button class="nav-item" data-view="system" type="button"><span class="nav-ic">⌘</span><span>Status sistem</span></button>
@@ -3272,8 +3272,22 @@ html[data-palette="ember"]{--accent:#f2bd72;--accent-2:#f29170;--chart-income:#e
     const activeNavItem = document.querySelector('.sidebar .nav-item[data-view="' + activeView + '"]');
     const navGroup = activeNavItem && activeNavItem.closest("details");
     if (navGroup) navGroup.open = true;
-    if (activeNavItem) activeNavItem.scrollIntoView({ block:"nearest", behavior:"smooth" });
-    window.scrollTo({ top:0, left:0, behavior:"smooth" });
+    const navContainer = activeNavItem && activeNavItem.closest(".nav");
+    if (navContainer && activeNavItem) {
+      const navRect = navContainer.getBoundingClientRect();
+      const itemRect = activeNavItem.getBoundingClientRect();
+      if (itemRect.top < navRect.top) navContainer.scrollTop -= navRect.top - itemRect.top;
+      else if (itemRect.bottom > navRect.bottom) navContainer.scrollTop += itemRect.bottom - navRect.bottom;
+    }
+    const resetScroll = () => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+      const content = document.querySelector(".content");
+      if (content) content.scrollTop = 0;
+    };
+    resetScroll();
+    requestAnimationFrame(resetScroll);
     if (store) localStorage.setItem("dashboardView", activeView);
   }
   const dateForInput = value => {

@@ -2652,6 +2652,9 @@ function buatHalamanWeb() {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>OpenGlass Finance · Bot Keuangan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
 <style>
 /* OpenGlass-inspired interface system for the finance dashboard. */
 *{box-sizing:border-box}
@@ -2686,6 +2689,44 @@ button,input,select,textarea{font:inherit}button{color:inherit}[hidden]{display:
 @media(max-width:380px){.actions .hint{display:none}.metric-card{padding:11px}.metric-card .value{font-size:.94rem}.smart-radar{grid-template-columns:1fr}.hero-stat{padding:9px}.cmds{grid-template-columns:1fr}.lv-insight-grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 
+
+/* Layout refresh: calmer hierarchy, fewer repeated summaries, better touch targets. */
+:root{--font-body:"DM Sans","Avenir Next","Segoe UI Variable",system-ui,sans-serif;--font-display:"Fraunces",Georgia,"Times New Roman",serif}
+html,body{font-family:var(--font-body)}
+body{background:radial-gradient(ellipse 42rem 34rem at 8% -12%,rgba(225,111,83,.13),transparent 72%),radial-gradient(ellipse 40rem 34rem at 102% 25%,rgba(73,176,174,.12),transparent 72%),linear-gradient(145deg,#0d1111,#111716 56%,#0c1212);background-attachment:fixed}
+html[data-theme="light"] body{background:radial-gradient(ellipse 42rem 34rem at 8% -12%,rgba(225,111,83,.1),transparent 72%),radial-gradient(ellipse 40rem 34rem at 102% 25%,rgba(73,176,174,.1),transparent 72%),linear-gradient(145deg,#f0eee8,#e8ede8 56%,#e8efec);background-attachment:fixed}
+body:before{opacity:.19;background-size:56px 56px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.5),transparent 80%)}body:after{width:27rem;height:27rem;left:44%;top:48%;background:rgba(226,117,85,.055);filter:blur(120px)}
+.bg-fx{position:fixed;z-index:0;inset:0;overflow:hidden;pointer-events:none}.grid-fx{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(to bottom,#000,transparent 78%)}.blob{position:absolute;width:25rem;height:25rem;border-radius:50%;filter:blur(92px);opacity:.12;animation:blob-drift 27s ease-in-out infinite alternate}.b1{top:-13rem;left:28%;background:#e57858}.b2{top:25%;right:-15rem;background:#49b8b5;animation-delay:-9s}.b3{bottom:-19rem;left:28%;background:#c69b5f;animation-delay:-16s}@keyframes blob-drift{to{transform:translate3d(5vw,4vh,0) scale(1.18)}}
+.shell{grid-template-columns:238px minmax(0,1fr);gap:25px;width:min(100%,1640px);padding:24px}.sidebar{top:24px;height:calc(100vh - 48px);min-height:580px;padding:19px 13px;border-radius:24px;background:linear-gradient(155deg,rgba(31,38,36,.85),rgba(15,20,19,.9));box-shadow:0 28px 80px rgba(0,0,0,.28),inset 0 1px rgba(255,255,255,.09)}html[data-theme="light"] .sidebar{background:rgba(247,247,241,.8)}.brand{gap:11px;padding:2px 5px 17px}.mark{width:40px;height:42px;border-radius:16px 13px 16px 13px;background:linear-gradient(145deg,#ee9a77,#72c6b5 74%);box-shadow:inset 0 1px rgba(255,255,255,.5),0 8px 23px rgba(64,149,138,.18);animation:mark-breathe 8s ease-in-out infinite alternate}.brand h1{font-family:var(--font-display);font-size:1.08rem;font-weight:520;letter-spacing:-.025em}.brand small{font-size:.65rem;letter-spacing:.02em}.nav{gap:4px;padding-right:3px}.nav-label{padding:12px 10px 5px;font-size:.58rem;letter-spacing:.15em}.nav-item{min-height:40px;padding:8px 10px;border-radius:12px;font-size:.76rem;font-weight:570}.nav-item.active{background:linear-gradient(110deg,rgba(207,113,83,.82),rgba(69,151,145,.76));box-shadow:0 8px 20px rgba(16,22,20,.19),inset 0 1px rgba(255,255,255,.22)}.nav-item.active:before{background:#f8d3b4}.nav-ic{width:19px;height:19px;font-size:1rem;color:var(--accent-2)}.nav-more{min-width:0}.nav-more>summary{list-style:none}.nav-more>summary::-webkit-details-marker{display:none}.nav-chevron{margin-left:auto;color:var(--muted);transition:transform .2s}.nav-more[open] .nav-chevron{transform:rotate(180deg)}.nav-more-list{display:grid;gap:2px;padding:4px 0 4px 11px;margin:2px 0 3px 18px;border-left:1px solid var(--line)}.nav-more-list .nav-item{min-height:35px;padding-block:6px;font-size:.7rem}.side-meta{gap:7px;padding:11px;border-radius:15px;font-size:.66rem}.theme-toggle{min-height:39px}
+.content{gap:15px;max-width:1390px;padding-bottom:38px}.topbar{top:14px;min-height:94px;padding:15px 19px;border-radius:22px;background:rgba(20,26,25,.72);box-shadow:0 14px 44px rgba(0,0,0,.18),inset 0 1px rgba(255,255,255,.09)}html[data-theme="light"] .topbar{background:rgba(250,249,244,.75)}.topbar h2{font-family:var(--font-display);font-size:clamp(1.42rem,2.2vw,1.9rem);font-weight:520;letter-spacing:-.04em}.kicker{color:var(--accent-2);font-size:.57rem;letter-spacing:.17em}.topbar p{font-size:.71rem}.actions{gap:6px}.btn{min-height:38px;border-radius:13px;font-size:.69rem}.btn.primary{background:linear-gradient(120deg,#efaa83,#7cc9b8);box-shadow:0 7px 21px rgba(80,175,156,.15)}.field{min-height:38px;border-radius:13px;font-size:.69rem}.pill{min-height:36px;font-size:.64rem}.menu-fab{display:none}
+.view{gap:13px}.view.active{animation:fade-in .36s ease both}.view.active>*{animation:section-in .45s cubic-bezier(.2,.7,.2,1) both}.view.active>*:nth-child(2){animation-delay:.05s}.view.active>*:nth-child(3){animation-delay:.1s}.view.active>*:nth-child(4){animation-delay:.15s}.view.active>*:nth-child(5){animation-delay:.2s}@keyframes section-in{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
+.finance-hero{grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(120px,.56fr));gap:9px;padding:20px 21px;border-radius:23px;background:radial-gradient(ellipse at 100% 0,rgba(239,151,111,.2),transparent 38%),radial-gradient(ellipse at 0 100%,rgba(61,180,171,.16),transparent 42%),linear-gradient(135deg,rgba(36,44,40,.95),rgba(20,27,25,.94));box-shadow:0 21px 60px rgba(0,0,0,.22),inset 0 1px rgba(255,255,255,.11)}.finance-hero:before{position:absolute;inset:-1px;content:"";border-radius:inherit;background:linear-gradient(112deg,transparent 18%,rgba(255,255,255,.07) 46%,transparent 62%);background-size:220% 100%;animation:hero-sheen 12s ease-in-out infinite;pointer-events:none}@keyframes hero-sheen{0%,30%{background-position:180% 0}70%,100%{background-position:-100% 0}}.hero-eyebrow,.section-overline{display:block;margin-bottom:6px;color:#85c9b9;font-size:.56rem;font-weight:720;letter-spacing:.16em;text-transform:uppercase}.hero-copy h3{font-family:var(--font-display);font-size:clamp(1.45rem,2.25vw,2rem);font-weight:510;letter-spacing:-.035em}.hero-copy p{max-width:48ch;color:#b8c0b8;font-size:.75rem;line-height:1.6}.hero-stat{min-height:79px;gap:8px;padding:12px;border-radius:15px;background:rgba(255,255,255,.055)}.hero-stat span{font-size:.61rem}.hero-stat b{font-size:.96rem}.score{color:#8fe0b6}
+.metric-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.metric-card{min-height:119px;padding:14px 15px;border-radius:18px;background:linear-gradient(145deg,rgba(31,38,36,.78),rgba(19,25,23,.74));box-shadow:0 12px 33px rgba(0,0,0,.14),inset 0 1px rgba(255,255,255,.07)}html[data-theme="light"] .metric-card{background:rgba(250,250,246,.78)}.metric-card:after{width:100px;height:80px;right:-25px;bottom:-42px;opacity:.7}.metric-card:hover{transform:translateY(-4px);border-color:rgba(128,200,184,.35)}.metric-card .value{font-size:clamp(1.05rem,1.55vw,1.34rem);font-weight:640}.metric-card .label{font-size:.66rem}.metric-card .hint{max-width:85%;font-size:.61rem}.metric-ic{top:12px;right:12px;width:28px;height:28px;border-radius:10px;font-family:var(--font-display);font-size:1rem;font-weight:600}
+.overview-grid{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(265px,.72fr);align-items:stretch;gap:13px}.overview-chart-card{min-height:350px;padding:17px 18px 13px}.overview-chart-card .panel-head{align-items:flex-start}.overview-chart-card .panel-head h3,.glance-card .panel-head h3,.panel-head h3{font-family:var(--font-display);font-size:1.03rem;font-weight:520;letter-spacing:-.025em}.overview-chart-wrap{position:relative;height:255px;margin-top:8px;overflow:hidden}.overview-chart-wrap:after{position:absolute;right:0;bottom:0;left:0;height:25px;background:linear-gradient(transparent,var(--glass));content:"";pointer-events:none}.overview-chart-wrap svg{width:100%;height:100%;overflow:visible}.chart-legend{display:flex;gap:12px;padding-top:4px;color:var(--muted);font-size:.64rem}.chart-legend span{display:flex;align-items:center;gap:5px}.legend-dot{width:7px;height:7px}.legend-dot.income{background:#70d5a9;box-shadow:0 0 10px rgba(112,213,169,.36)}.legend-dot.expense{background:#ef917a;box-shadow:0 0 10px rgba(239,145,122,.32)}.chart-foot{display:flex;justify-content:space-between;align-items:center;margin-top:4px;color:var(--muted);font-size:.61rem}.text-button{padding:4px 0;border:0;color:var(--accent-2);background:transparent;font-size:.66rem;font-weight:650}.text-button:hover{color:var(--text)}.chart-grid-line{stroke:rgba(190,205,192,.11);stroke-width:1}.chart-axis-label{fill:var(--muted);font:11px var(--font-body)}.overview-chart-line{fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1800;stroke-dashoffset:1800;animation:chart-draw 1.3s cubic-bezier(.2,.75,.3,1) forwards}.overview-chart-line.income{stroke:#70d5a9}.overview-chart-line.expense{stroke:#ef917a;animation-delay:.14s}@keyframes chart-draw{to{stroke-dashoffset:0}}.chart-area{opacity:.14}.chart-point{transform-box:fill-box;transform-origin:center;animation:point-in .55s cubic-bezier(.2,.8,.2,1) both}.chart-point.income{fill:#8fe0b6}.chart-point.expense{fill:#f4a28e}@keyframes point-in{from{opacity:0;transform:scale(.2)}to{opacity:1;transform:scale(1)}}
+.overview-aside{display:grid;grid-template-rows:auto 1fr;gap:11px;min-width:0}.focus-card{position:relative;min-height:176px;padding:17px;border:1px solid rgba(218,159,118,.22);border-radius:20px;background:radial-gradient(ellipse at 100% 0,rgba(207,119,83,.14),transparent 52%),linear-gradient(145deg,rgba(38,41,35,.92),rgba(23,29,25,.92));box-shadow:var(--shadow);overflow:hidden}.focus-mark{position:absolute;top:12px;right:14px;color:#f0b38a;font-size:1.3rem;animation:mark-breathe 6s ease-in-out infinite alternate}.focus-card h3{max-width:80%;margin:9px 0 5px;font-family:var(--font-display);font-size:1.16rem;font-weight:520;line-height:1.2}.focus-card>p{margin:0;color:#b4bcb3;font-size:.68rem;line-height:1.48}.focus-divider{height:1px;margin:12px 0 10px;background:linear-gradient(90deg,rgba(255,255,255,.17),transparent)}.focus-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}.focus-pair div{display:grid;gap:4px}.focus-pair span{color:#9da89e;font-size:.58rem}.focus-pair b{font-size:.71rem;font-weight:650}.focus-detail{display:grid;gap:2px;margin-top:7px!important;color:#aab5aa!important;font-size:.59rem!important}.glance-card{gap:6px;padding:15px 16px;border-radius:19px}.glance-card .panel-head{margin-bottom:1px}.glance-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:7px 0;border-bottom:1px solid var(--line);font-size:.64rem}.glance-row:last-child{border-bottom:0}.glance-row span{color:var(--muted)}.glance-row b{max-width:52%;text-align:right;font-size:.69rem;font-weight:650;overflow-wrap:anywhere}
+.panel-grid.equal{gap:13px}.panel-card{gap:12px;padding:17px;border-radius:19px;background:rgba(24,30,28,.77);box-shadow:0 12px 36px rgba(0,0,0,.13),inset 0 1px rgba(255,255,255,.065)}html[data-theme="light"] .panel-card,html[data-theme="light"] .radar-card,html[data-theme="light"] .mini{background:rgba(250,250,246,.8)}.panel-grid .panel-card{min-height:150px}.panel-head h3{margin-top:1px}.panel-head .subtle{font-size:.65rem}.bar-list{gap:12px}.bar-row{gap:6px}.bar-meta{font-size:.7rem}.bar{height:6px;background:rgba(170,184,175,.1)}.bar span{background:linear-gradient(90deg,#68c8ad,#d9ac78);transition:width .9s cubic-bezier(.2,.8,.2,1)}.wallet{min-height:42px;border-radius:13px;font-size:.7rem}.wallet b{font-weight:650}
+.report-banner,.trend-shell{border-radius:20px}.report-banner h3,.trend-shell h3{font-family:var(--font-display);font-size:1.15rem;font-weight:520}.report-banner{background:radial-gradient(ellipse at 96% 0,rgba(235,133,99,.15),transparent 44%),linear-gradient(130deg,rgba(34,42,38,.95),rgba(17,24,21,.95))}.table-wrap{border-radius:14px}.table th{font-size:.61rem;letter-spacing:.07em;text-transform:uppercase}.table tbody tr{animation:table-in .3s ease both}@keyframes table-in{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}.table tbody tr:hover{background:rgba(114,182,161,.07)}
+.btn,.nav-item,.metric-card,.panel-card,.mini,.radar-card,.budget-card,.goal-card,.category-card,.cmd,.wallet,.status-item,.lv-page{transition:transform .22s cubic-bezier(.2,.75,.25,1),border-color .2s ease,background .2s ease,box-shadow .22s ease}.btn:focus-visible,.nav-item:focus-visible,.field:focus-visible,.text-button:focus-visible{outline:2px solid var(--accent-2);outline-offset:3px}.modal-box,.lock-box{max-height:min(90dvh,760px);overflow:auto;border-radius:22px}.modal{padding:14px}.form-group input,.form-group select,.lock-box input{min-height:44px;border-radius:12px}.toast{bottom:max(18px,env(safe-area-inset-bottom));border-radius:14px}
+.bottom-nav{padding:7px max(7px,env(safe-area-inset-right)) calc(7px + env(safe-area-inset-bottom)) max(7px,env(safe-area-inset-left));border-radius:18px}.bottom-nav .bn-item{min-width:0;min-height:48px}.bottom-nav .bn-add{flex:0 0 58px;align-items:center;justify-content:center;gap:1px;color:#18201d}.bottom-nav .bn-plus{display:grid;width:29px;height:29px;place-items:center;border-radius:10px;color:#18201d;background:linear-gradient(145deg,#efaa83,#7cc9b8);font-size:1.15rem;font-weight:500;box-shadow:0 5px 13px rgba(80,175,156,.18)}.bottom-nav .bn-add span:last-child{color:var(--muted);font-size:.56rem}.mobile-overlay{touch-action:manipulation}
+@media(max-width:1200px){.shell{grid-template-columns:215px minmax(0,1fr);gap:15px;padding:15px}.sidebar{top:15px;height:calc(100vh - 30px);min-height:540px}.content{gap:13px}.overview-grid{grid-template-columns:minmax(0,1.35fr) minmax(235px,.78fr)}.overview-chart-card{min-height:325px}.overview-chart-wrap{height:230px}.metric-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.finance-hero{grid-template-columns:minmax(0,1.2fr) repeat(3,minmax(105px,.65fr))}}
+@media(max-width:900px){.shell{display:block;padding:12px}.sidebar{display:flex;position:fixed;z-index:31;inset:12px auto 12px 12px;width:min(290px,calc(100vw - 24px));height:auto;min-height:0;transform:translateX(calc(-100% - 22px));overflow-y:auto}.shell.menu-open .sidebar{transform:translateX(0)}.content{max-width:none;padding-bottom:calc(86px + env(safe-area-inset-bottom))}.topbar{position:relative;top:auto}.menu-fab{display:inline-flex}.mobile-overlay{position:fixed;z-index:30;inset:0;background:rgba(4,8,7,.57);backdrop-filter:blur(7px)}.shell.menu-open .mobile-overlay{display:block}.overview-grid{grid-template-columns:minmax(0,1.35fr) minmax(220px,.8fr)}.metric-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}.finance-hero{grid-template-columns:minmax(0,1.2fr) repeat(3,minmax(95px,.6fr))}.nav{grid-template-columns:1fr}.nav-more-list{grid-template-columns:1fr 1fr}.bottom-nav{position:fixed;z-index:29;right:12px;bottom:10px;left:12px;display:flex;gap:4px;min-height:63px;border:1px solid var(--line-strong);background:var(--glass-strong);box-shadow:var(--shadow-lg);backdrop-filter:blur(25px) saturate(150%)}.bottom-nav .bn-item{width:auto}.panel-grid.equal{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.shell{padding:9px}.content{gap:11px}.topbar{align-items:flex-start;padding:13px;border-radius:19px}.topbar h2{font-size:1.45rem}.topbar p{font-size:.65rem}.topbar .actions{display:grid;width:100%;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.topbar .actions>*{width:100%;min-width:0;justify-content:center}.actions .btn,.actions .field{min-height:38px;padding:6px 5px;font-size:.62rem}.actions .pill{min-height:36px;grid-column:span 2;justify-content:flex-start;padding-inline:9px}.actions .menu-fab{display:inline-flex}.actions #global-period-select{grid-column:span 2}.actions #cmdk-btn{grid-column:span 2}.actions .hint{display:none}.finance-hero{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;padding:15px;border-radius:19px}.hero-copy{grid-column:1/-1;padding:0 2px 7px}.hero-copy h3{font-size:1.45rem}.hero-copy p{font-size:.68rem}.hero-stat{min-height:68px;gap:6px;padding:9px}.hero-stat span{font-size:.56rem;line-height:1.3}.hero-stat b{font-size:.78rem;overflow-wrap:anywhere}.metric-grid,.mini-grid,.budget-summary,.trend-kpis,.binance-kpis,.lv-hero-grid,.lv-insight-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.metric-card{min-height:104px;padding:12px;border-radius:16px}.metric-card .label{max-width:75%;font-size:.62rem}.metric-card .value{font-size:1.03rem}.metric-card .hint{font-size:.58rem}.metric-ic{top:9px;right:9px;width:25px;height:25px}.overview-grid{grid-template-columns:1fr;gap:10px}.overview-chart-card{min-height:0;padding:14px 12px 11px}.overview-chart-card .panel-head{gap:7px}.overview-chart-card .panel-head h3{font-size:.94rem}.overview-chart-card .subtle{max-width:32ch;font-size:.61rem}.chart-legend{gap:8px;font-size:.57rem}.overview-chart-wrap{height:220px;margin:4px -4px 0}.overview-chart-wrap svg{min-width:0;width:100%;transform-origin:top left}.chart-foot{font-size:.57rem}.text-button{font-size:.6rem}.overview-aside{grid-template-columns:1fr 1fr;grid-template-rows:auto;gap:8px}.focus-card{min-height:0;padding:13px;border-radius:17px}.focus-card h3{font-size:1rem}.focus-card>p{font-size:.62rem}.focus-pair{gap:6px}.focus-pair span{font-size:.52rem}.focus-pair b{font-size:.62rem}.focus-detail{font-size:.54rem!important}.glance-card{gap:4px;padding:12px;border-radius:17px}.glance-card .panel-head h3{font-size:.85rem}.glance-row{align-items:flex-start;gap:6px;padding:6px 0;font-size:.56rem}.glance-row b{font-size:.59rem}.section-overline{font-size:.51rem}.panel-grid,.panel-grid.equal{grid-template-columns:1fr;gap:9px}.panel-card{padding:14px;border-radius:17px}.panel-head h3,.panel-card h3{font-size:.91rem}.subtle{font-size:.62rem}.trend-kpis,.binance-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.chart-wrap{height:230px}.table-wrap{max-height:390px}.table{min-width:620px}.budget-card-list{grid-template-columns:1fr}.lv-wrap{grid-template-columns:1fr}.lv-cover{grid-column:auto;padding:16px}.lv-cover h2{font-size:1.2rem}.lv-hero-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.lv-val{font-size:.78rem}.lv-page{padding:14px}.lv-chartbox{height:205px}.lv-two-col{grid-template-columns:1fr}.lv-insight-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.lv-big{font-size:.74rem}.modal{align-items:flex-end;padding:8px}.modal-box{width:100%;max-height:88dvh;padding:17px;border-radius:22px 22px 14px 14px}.form-grid{grid-template-columns:1fr}.form-group.full{grid-column:auto}.notif-panel{top:12px;right:9px}.cmds{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:390px){.shell{padding:7px}.topbar .actions{grid-template-columns:repeat(3,minmax(0,1fr))}.actions #cmdk-btn{grid-column:span 1}.actions #global-period-select{grid-column:span 2}.actions .pill{grid-column:span 1;font-size:.55rem}.actions .btn{font-size:.58rem}.finance-hero{grid-template-columns:1fr 1fr}.hero-copy{grid-column:1/-1}.hero-stat:last-child{grid-column:1/-1}.overview-aside{grid-template-columns:1fr}.focus-card{padding:14px}.glance-card{padding:14px}.metric-card .value{font-size:.95rem}.lv-hero-grid,.lv-insight-grid{grid-template-columns:1fr}.cmds{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.bg-fx,.blob,.finance-hero:before,.mark,.focus-mark{animation:none!important}.view.active>*,.overview-chart-line,.chart-point,.table tbody tr{animation:none!important;stroke-dashoffset:0!important}}
+
+/* Switchable color stories, shared by every view. */
+:root{--chart-income:#83d8b1;--chart-expense:#ef987f;--palette-a:#ef987f;--palette-b:#67b9a9;--palette-soft:rgba(239,152,127,.18);--palette-glow:rgba(103,185,169,.15)}
+html[data-palette="tide"]{--accent:#83c9fa;--accent-2:#70dfd1;--chart-income:#70dfbd;--chart-expense:#87b6fa;--palette-a:#75bafa;--palette-b:#66d8c5;--palette-soft:rgba(117,186,250,.2);--palette-glow:rgba(102,216,197,.17);--green:#70dfbd;--green-soft:rgba(112,223,189,.13)}
+html[data-palette="orchid"]{--accent:#d5a0f2;--accent-2:#f09bc0;--chart-income:#c5a0f0;--chart-expense:#f09bc0;--palette-a:#ca96ed;--palette-b:#ec8eb8;--palette-soft:rgba(202,150,237,.2);--palette-glow:rgba(236,142,184,.16);--green:#9ed9bc;--green-soft:rgba(158,217,188,.13)}
+html[data-palette="ember"]{--accent:#f2bd72;--accent-2:#f29170;--chart-income:#e8c477;--chart-expense:#ef8e70;--palette-a:#e7bd6d;--palette-b:#ee8e71;--palette-soft:rgba(231,189,109,.2);--palette-glow:rgba(238,142,113,.16);--green:#b8d58b;--green-soft:rgba(184,213,139,.13)}
+.nav-item.active{background:linear-gradient(110deg,color-mix(in srgb,var(--palette-a) 82%,transparent),color-mix(in srgb,var(--palette-b) 70%,transparent))}.btn.primary{background:linear-gradient(120deg,var(--palette-a),var(--palette-b));border-color:transparent;color:#101713}.theme-picker-trigger{gap:7px}.theme-trigger-orb{font-size:1rem;color:var(--accent-2);animation:orb-spin 9s linear infinite}.theme-current{color:var(--accent-2);font-size:.68rem}.theme-popover[hidden]{display:none}.theme-popover{position:fixed;z-index:45;top:82px;right:26px;width:min(350px,calc(100vw - 20px));padding:16px;border:1px solid var(--line-strong);border-radius:20px;color:var(--text);background:var(--glass-strong);box-shadow:var(--shadow-lg);backdrop-filter:blur(26px) saturate(140%);animation:modal-in .22s ease both}.theme-popover-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}.theme-popover-head h3{margin:2px 0 0;font:520 1.1rem var(--font-display)}.theme-popover-copy{margin:7px 0 12px;color:var(--muted);font-size:.68rem;line-height:1.5}.theme-close{width:30px;height:30px;border:1px solid var(--line);border-radius:10px;color:var(--muted);background:var(--glass-soft);font-size:1.15rem}.theme-options{display:grid;grid-template-columns:1fr 1fr;gap:8px}.theme-option{display:flex;min-width:0;align-items:center;gap:8px;padding:9px;border:1px solid var(--line);border-radius:13px;color:var(--text);background:var(--glass-soft);text-align:left;transition:transform .2s,border-color .2s,background .2s}.theme-option:hover{transform:translateY(-2px);border-color:var(--accent-2)}.theme-option[aria-pressed="true"]{border-color:var(--accent-2);background:var(--palette-soft);box-shadow:0 0 0 1px color-mix(in srgb,var(--accent-2) 20%,transparent)}.theme-swatch{display:flex;flex:none;align-items:center;gap:2px;width:37px;height:37px;padding:5px;border-radius:11px;background:rgba(255,255,255,.07)}.theme-swatch i{width:8px;height:20px;border-radius:8px}.theme-swatch.meadow i:nth-child(1){background:#ef987f}.theme-swatch.meadow i:nth-child(2){background:#67b9a9}.theme-swatch.meadow i:nth-child(3){background:#e3c389}.theme-swatch.tide i:nth-child(1){background:#75bafa}.theme-swatch.tide i:nth-child(2){background:#66d8c5}.theme-swatch.tide i:nth-child(3){background:#b0d9f5}.theme-swatch.orchid i:nth-child(1){background:#ca96ed}.theme-swatch.orchid i:nth-child(2){background:#ec8eb8}.theme-swatch.orchid i:nth-child(3){background:#ad9be3}.theme-swatch.ember i:nth-child(1){background:#e7bd6d}.theme-swatch.ember i:nth-child(2){background:#ee8e71}.theme-swatch.ember i:nth-child(3){background:#d9ad83}.theme-option-text{display:grid;min-width:0;gap:2px}.theme-option-text b{font-size:.67rem}.theme-option-text small{color:var(--muted);font-size:.56rem}.theme-check{display:none;margin-left:auto;color:var(--accent-2);font-size:.77rem}.theme-option[aria-pressed="true"] .theme-check{display:block}.theme-mode-btn{display:flex;width:100%;justify-content:center;gap:8px;margin-top:10px;padding:9px;border:1px solid var(--line);border-radius:11px;color:var(--text);background:var(--glass-soft);font-size:.68rem;font-weight:650}.theme-popover .section-overline{color:var(--accent-2)}
+/* Palette-driven ambient motion and a roomier wide-screen composition. */
+.bg-fx .b1{background:var(--palette-a)}.bg-fx .b2{background:var(--palette-b)}.bg-fx .b3{background:var(--accent)}.overview-chart-line.income{stroke:var(--chart-income)}.overview-chart-line.expense{stroke:var(--chart-expense)}.chart-point.income{fill:var(--chart-income)}.chart-point.expense{fill:var(--chart-expense)}.legend-dot.income{background:var(--chart-income)}.legend-dot.expense{background:var(--chart-expense)}.focus-card{background:radial-gradient(ellipse at 100% 0,var(--palette-soft),transparent 58%),var(--glass)}.metric-card:hover,.panel-card:hover,.budget-card:hover,.goal-card:hover{transform:translateY(-3px);box-shadow:0 18px 42px rgba(0,0,0,.19)}.view.active .panel-card,.view.active .metric-card,.view.active .budget-card,.view.active .goal-card{animation:card-arrive .55s cubic-bezier(.2,.8,.2,1) both}.view.active .panel-card:nth-child(2n),.view.active .metric-card:nth-child(2n){animation-delay:.07s}@keyframes card-arrive{from{opacity:.65;transform:translateY(7px) scale(.99)}to{opacity:1;transform:none}}@keyframes orb-spin{to{transform:rotate(360deg)}}
+@media(min-width:1450px){.shell{grid-template-columns:252px minmax(0,1fr);gap:22px;max-width:1840px;padding:24px}.content{gap:19px}.topbar{padding:22px 25px}.overview-grid{grid-template-columns:minmax(0,1.9fr) minmax(310px,.7fr);gap:18px}.overview-chart-card{min-height:390px;padding:21px 24px}.overview-chart-wrap{height:285px}.metric-grid{gap:15px}.metric-card{min-height:142px;padding:20px}.panel-grid.equal{gap:16px}.theme-popover{top:96px;right:max(32px,calc((100vw - 1840px)/2 + 28px))}}
+@media(max-width:700px){.theme-popover{top:auto;right:10px;bottom:calc(78px + env(safe-area-inset-bottom));left:10px;width:auto;padding:13px}.theme-option{padding:8px}.theme-current{display:none}.theme-trigger-orb{display:none}.topbar .actions #theme-picker-btn{grid-column:span 1}}
+@media(max-width:390px){.theme-popover{bottom:calc(76px + env(safe-area-inset-bottom))}.theme-options{gap:6px}.theme-option{gap:6px;padding:7px}.theme-swatch{width:32px;height:32px}.theme-swatch i{height:17px}.theme-option-text b{font-size:.61rem}}
+@media(prefers-reduced-motion:reduce){.theme-trigger-orb,.theme-option,.view.active .panel-card,.view.active .metric-card,.view.active .budget-card,.view.active .goal-card{animation:none!important;transition:none!important}}
+
 </style>
 </head>
 <body>
@@ -2698,24 +2739,28 @@ button,input,select,textarea{font:inherit}button{color:inherit}[hidden]{display:
 <div class="shell" id="shell">
   <div class="mobile-overlay" id="mobile-overlay"></div>
   <aside class="sidebar">
-    <div class="brand"><div class="mark">WA</div><div><h1>Bot Keuangan</h1><small>Liquid glass · Catatan finansial</small></div></div>
+    <div class="brand"><div class="mark">BK</div><div><h1>Ruang Keuangan</h1><small>Catatan yang terasa ringan</small></div></div>
     <nav class="nav">
-      <div class="nav-label">Ringkasan</div>
-      <button class="nav-item active" data-view="overview" type="button"><span class="nav-ic">📊</span><span>Overview</span></button>
-      <button class="nav-item" data-view="analytics" type="button"><span class="nav-ic">🧠</span><span>Analitik</span></button>
-      <button class="nav-item" data-view="trend" type="button"><span class="nav-ic">📈</span><span>Tren</span></button>
-      <button class="nav-item" id="admin-nav" data-view="admin" type="button" hidden><span class="nav-ic">👥</span><span>Pengguna</span></button>
-      <div class="nav-label">Keuangan</div>
-      <button class="nav-item" data-view="transactions" type="button"><span class="nav-ic">🧾</span><span>Transaksi</span></button>
-      <button class="nav-item" data-view="budget" type="button"><span class="nav-ic">🎯</span><span>Budget</span></button>
-      <button class="nav-item" data-view="goals" type="button"><span class="nav-ic">🏆</span><span>Target Tabungan</span></button>
-      <button class="nav-item" data-view="reports" type="button"><span class="nav-ic">📄</span><span>Laporan</span></button>
-      <button class="nav-item" data-view="laporanvisual" type="button"><span class="nav-ic">🧾</span><span>Laporan Visual</span></button>
-      <button class="nav-item" data-view="binance" type="button"><span class="nav-ic">🪙</span><span>Binance</span></button>
-      <div class="nav-label">Lainnya</div>
-      <button class="nav-item" data-view="catalog" type="button"><span class="nav-ic">🗂️</span><span>Katalog</span></button>
-      <button class="nav-item" data-view="system" type="button"><span class="nav-ic">🛠️</span><span>Sistem</span></button>
-      <button class="nav-item" data-view="commands" type="button"><span class="nav-ic">💬</span><span>Command</span></button>
+      <div class="nav-label">Ruang utama</div>
+      <button class="nav-item active" data-view="overview" type="button"><span class="nav-ic">◈</span><span>Ringkasan</span></button>
+      <button class="nav-item" data-view="transactions" type="button"><span class="nav-ic">↗</span><span>Transaksi</span></button>
+      <button class="nav-item" data-view="budget" type="button"><span class="nav-ic">◎</span><span>Anggaran</span></button>
+      <button class="nav-item" data-view="goals" type="button"><span class="nav-ic">◌</span><span>Target tabungan</span></button>
+      <button class="nav-item" data-view="reports" type="button"><span class="nav-ic">▤</span><span>Laporan</span></button>
+      <div class="nav-label">Wawasan</div>
+      <button class="nav-item" data-view="analytics" type="button"><span class="nav-ic">⌁</span><span>Analitik</span></button>
+      <details class="nav-more">
+        <summary class="nav-item"><span class="nav-ic">＋</span><span>Lainnya</span><span class="nav-chevron">⌄</span></summary>
+        <div class="nav-more-list">
+          <button class="nav-item" data-view="trend" type="button"><span class="nav-ic">⌁</span><span>Tren harian</span></button>
+          <button class="nav-item" data-view="laporanvisual" type="button"><span class="nav-ic">▧</span><span>Laporan visual</span></button>
+          <button class="nav-item" data-view="catalog" type="button"><span class="nav-ic">▦</span><span>Kategori</span></button>
+          <button class="nav-item" data-view="binance" type="button"><span class="nav-ic">◇</span><span>Aset digital</span></button>
+          <button class="nav-item" data-view="system" type="button"><span class="nav-ic">⌘</span><span>Status sistem</span></button>
+          <button class="nav-item" data-view="commands" type="button"><span class="nav-ic">/</span><span>Perintah bot</span></button>
+          <button class="nav-item" id="admin-nav" data-view="admin" type="button" hidden><span class="nav-ic">◎</span><span>Pengguna</span></button>
+        </div>
+      </details>
     </nav>
     <div class="side-meta">
       <div>Owner: <b id="side-owner">-</b></div>
@@ -2723,7 +2768,6 @@ button,input,select,textarea{font:inherit}button{color:inherit}[hidden]{display:
       <div>Zona: <b id="side-zone">-</b></div>
     </div>
     <div class="side-foot">
-      <button class="theme-toggle" id="theme-toggle" type="button"><span id="theme-toggle-icon">🌙</span><span id="theme-toggle-label">Mode Gelap</span></button>
     </div>
   </aside>
 
@@ -2740,7 +2784,7 @@ button,input,select,textarea{font:inherit}button{color:inherit}[hidden]{display:
         <select class="field" id="global-period-select" aria-label="Pilih periode laporan"></select>
         <span class="pill"><span id="status-dot" class="dot"></span><span id="status-label">Memuat</span></span>
         <button class="btn icon-btn" id="notif-btn" type="button" title="Notifikasi">🔔<span class="badge-count" id="notif-count" hidden>0</span></button>
-        <button class="btn" id="token-btn" type="button">Ganti Akses</button>
+        <button class="btn theme-picker-trigger" id="theme-picker-btn" type="button" aria-expanded="false" aria-controls="theme-picker"><span class="theme-trigger-orb" aria-hidden="true">◌</span><span>Tema</span><span class="theme-current" id="theme-current-label">Kebun</span></button>
         <button class="btn" id="quick-add-btn" type="button">+ Catat</button>
         <button class="btn primary" id="refresh-btn" type="button">Refresh</button>
       </div>
@@ -2748,6 +2792,17 @@ button,input,select,textarea{font:inherit}button{color:inherit}[hidden]{display:
     <div class="notif-panel" id="notif-panel">
       <div class="notif-head"><b>Notifikasi</b><button class="btn small" id="notif-close" type="button">Tutup</button></div>
       <div class="notif-list" id="notif-list"><div class="empty">Belum ada notifikasi.</div></div>
+    </div>
+    <div class="theme-popover" id="theme-picker" role="dialog" aria-label="Pilih tema warna" hidden>
+      <div class="theme-popover-head"><div><span class="section-overline">SUASANA WARNA</span><h3>Pilih warna ruangmu</h3></div><button class="theme-close" id="theme-picker-close" type="button" aria-label="Tutup pilihan tema">×</button></div>
+      <p class="theme-popover-copy">Warna berubah di seluruh halaman. Preferensi ini tersimpan di perangkatmu.</p>
+      <div class="theme-options" role="group" aria-label="Pilihan tema">
+        <button class="theme-option" type="button" data-palette-choice="meadow" aria-pressed="true"><span class="theme-swatch meadow"><i></i><i></i><i></i></span><span class="theme-option-text"><b>Kebun senja</b><small>Koral · sage</small></span><span class="theme-check">✓</span></button>
+        <button class="theme-option" type="button" data-palette-choice="tide" aria-pressed="false"><span class="theme-swatch tide"><i></i><i></i><i></i></span><span class="theme-option-text"><b>Pasang surut</b><small>Biru · sea glass</small></span><span class="theme-check">✓</span></button>
+        <button class="theme-option" type="button" data-palette-choice="orchid" aria-pressed="false"><span class="theme-swatch orchid"><i></i><i></i><i></i></span><span class="theme-option-text"><b>Anggrek malam</b><small>Plum · rose</small></span><span class="theme-check">✓</span></button>
+        <button class="theme-option" type="button" data-palette-choice="ember" aria-pressed="false"><span class="theme-swatch ember"><i></i><i></i><i></i></span><span class="theme-option-text"><b>Amber hangat</b><small>Ochre · aprikot</small></span><span class="theme-check">✓</span></button>
+      </div>
+      <button class="theme-mode-btn" id="theme-mode-btn" type="button"><span id="theme-mode-icon">☀️</span><span id="theme-mode-label">Tampilan terang</span></button>
     </div>
     <div class="cmdk-overlay" id="cmdk-overlay">
       <div class="cmdk-box">
@@ -2758,47 +2813,56 @@ button,input,select,textarea{font:inherit}button{color:inherit}[hidden]{display:
 
     <section class="view active" data-view="overview" id="view-overview">
       <div class="finance-hero">
-        <div class="hero-copy"><h3 id="hero-title">Membaca kondisi keuangan...</h3><p id="hero-copy">Dashboard sedang menyusun ringkasan terintegrasi dari transaksi, kategori, dan budget.</p></div>
+        <div class="hero-copy"><span class="hero-eyebrow">CERITA BULAN INI</span><h3 id="hero-title">Membaca kondisi keuangan...</h3><p id="hero-copy">Ringkasan keuanganmu sedang disiapkan.</p></div>
         <div class="hero-stat"><span>Skor Keuangan</span><b class="score" id="health-score">-</b></div>
         <div class="hero-stat"><span>Batas Aman Harian</span><b id="daily-safe">-</b></div>
-        <div class="hero-stat"><span>Budget Tersisa</span><b id="budget-remaining-hero">-</b></div>
-      </div>
-      <div class="smart-radar">
-        <div class="radar-card priority"><span>Fokus Hari Ini</span><b id="radar-focus">-</b><p id="radar-focus-detail">-</p></div>
-        <div class="radar-card"><span>Level Risiko</span><b id="radar-risk">-</b><p id="radar-risk-detail">-</p></div>
-        <div class="radar-card"><span>Ritme Belanja</span><b id="radar-pace">-</b><p id="radar-pace-detail">-</p></div>
-        <div class="radar-card"><span>Transaksi Terbesar</span><b id="radar-largest">-</b><p id="radar-largest-detail">-</p></div>
+        <div class="hero-stat"><span>Sisa anggaran</span><b id="budget-remaining-hero">-</b></div>
       </div>
       <div class="metric-grid">
-        <div class="metric-card fx-in"><div class="metric-ic green">💰</div><div class="label">Pemasukan Periode</div><div class="value green" id="income-month">-</div><div class="hint" id="income-today">-</div><canvas class="spark" id="spark-income"></canvas></div>
-        <div class="metric-card fx-in"><div class="metric-ic red">🧾</div><div class="label">Pengeluaran Periode</div><div class="value red" id="expense-month">-</div><div class="hint" id="expense-today">-</div><canvas class="spark" id="spark-expense"></canvas></div>
-        <div class="metric-card fx-in"><div class="metric-ic blue">🏦</div><div class="label">Saldo Bersih Periode</div><div class="value blue" id="net-month">-</div><div class="hint" id="finance-status">Status -</div></div>
-        <div class="metric-card fx-in"><div class="metric-ic purple">📈</div><div class="label">Saldo Total</div><div class="value amber" id="total-balance">-</div><div class="hint" id="transaction-count">0 transaksi</div></div>
+        <div class="metric-card fx-in"><div class="metric-ic green">↑</div><div class="label">Uang masuk</div><div class="value green" id="income-month">-</div><div class="hint" id="income-today">-</div><canvas class="spark" id="spark-income"></canvas></div>
+        <div class="metric-card fx-in"><div class="metric-ic red">↓</div><div class="label">Uang keluar</div><div class="value red" id="expense-month">-</div><div class="hint" id="expense-today">-</div><canvas class="spark" id="spark-expense"></canvas></div>
+        <div class="metric-card fx-in"><div class="metric-ic blue">↗</div><div class="label">Selisih bulan ini</div><div class="value blue" id="net-month">-</div><div class="hint" id="finance-status">Status -</div></div>
+        <div class="metric-card fx-in"><div class="metric-ic purple">◉</div><div class="label">Saldo terkumpul</div><div class="value amber" id="total-balance">-</div><div class="hint" id="transaction-count">0 transaksi</div></div>
       </div>
-      <div class="panel-card binance-card" id="binance-overview-card">
-        <div class="panel-head"><div><h3>Binance Realtime</h3><div class="subtle" id="binance-overview-subtitle">Khusus nomor 33827179200526</div></div><span class="asset-chip">SPOT</span></div>
-        <div class="binance-kpis">
-          <div class="binance-kpi"><span>Total USDT</span><b id="binance-total-usdt">-</b></div>
-          <div class="binance-kpi"><span>Estimasi Rupiah</span><b id="binance-total-idr">-</b></div>
-          <div class="binance-kpi"><span>Aset Aktif</span><b id="binance-asset-count">-</b></div>
+      <div class="overview-grid">
+        <section class="panel-card overview-chart-card">
+          <div class="panel-head">
+            <div><span class="section-overline">ARUS KAS</span><h3>Uang bergerak, hari demi hari</h3><div class="subtle" id="overview-period-caption">Pemasukan dan pengeluaran pada periode terpilih</div></div>
+            <div class="chart-legend"><span><i class="legend-dot income"></i>Masuk</span><span><i class="legend-dot expense"></i>Keluar</span></div>
+          </div>
+          <div class="overview-chart-wrap"><svg id="overview-chart" viewBox="0 0 900 300" preserveAspectRatio="none" role="img" aria-label="Grafik pemasukan dan pengeluaran harian"></svg></div>
+          <div class="chart-foot"><span>Periode berjalan</span><button class="text-button" data-open-view="trend" type="button">Lihat tren lengkap <span aria-hidden="true">↗</span></button></div>
         </div>
-      </div>
-      <div class="mini-grid">
-        <div class="mini"><span class="label">Rata-rata Pengeluaran</span><b id="avg-expense">-</b><span class="hint">Per transaksi bulan ini</span></div>
-        <div class="mini"><span class="label">Proyeksi Pengeluaran</span><b id="projected-expense">-</b><span class="hint">Estimasi akhir bulan</span></div>
-        <div class="mini"><span class="label">Kategori Terbesar</span><b id="insight-top-category">-</b><span class="hint">Pengeluaran bulan ini</span></div>
-        <div class="mini"><span class="label">Rasio Sisa</span><b id="remaining-ratio">-</b><span class="hint">Dari pemasukan bulan ini</span></div>
+        <aside class="overview-aside">
+          <section class="focus-card">
+            <div class="focus-mark" aria-hidden="true">✳</div><span class="section-overline">CATATAN HARI INI</span>
+            <h3 id="radar-focus">-</h3><p id="radar-focus-detail">Ringkasan kebiasaanmu akan muncul di sini.</p>
+            <div class="focus-divider"></div>
+            <div class="focus-pair"><div><span>Ritme belanja</span><b id="radar-pace">-</b></div><div><span>Tingkat risiko</span><b id="radar-risk">-</b></div></div>
+            <p class="focus-detail"><span id="radar-pace-detail">-</span> <span id="radar-risk-detail">-</span></p>
+            <span id="radar-largest" hidden></span><span id="radar-largest-detail" hidden></span>
+          </section>
+          <section class="panel-card glance-card">
+            <div class="panel-head"><div><span class="section-overline">SEKILAS</span><h3>Angka yang perlu diingat</h3></div></div>
+            <div class="glance-row"><span>Rata-rata transaksi keluar</span><b id="avg-expense">-</b></div>
+            <div class="glance-row"><span>Perkiraan akhir bulan</span><b id="projected-expense">-</b></div>
+            <div class="glance-row"><span>Porsi yang tersisa</span><b id="remaining-ratio">-</b></div>
+            <div class="glance-row"><span>Kategori terbesar</span><b id="insight-top-category">-</b></div>
+          </section>
+        </aside>
       </div>
       <div class="panel-grid equal">
         <div class="panel-card">
-          <div class="panel-head"><div><h3>Pengeluaran per Kategori</h3><div class="subtle" id="top-category">-</div></div></div>
+          <div class="panel-head"><div><span class="section-overline">POLA BELANJA</span><h3>Ke mana uang pergi</h3><div class="subtle">Perbandingan pengeluaran berdasarkan kategori</div></div><button class="text-button" data-open-view="budget" type="button">Atur anggaran ↗</button></div>
           <div class="bar-list list-scroll" id="category-list"></div>
+          <span id="top-category" hidden></span>
         </div>
         <div class="panel-card">
-          <div class="panel-head"><div><h3>Saldo Dompet</h3><div class="subtle">Semua waktu</div></div></div>
+          <div class="panel-head"><div><span class="section-overline">TEMPAT UANGMU</span><h3>Saldo per dompet</h3><div class="subtle">Gabungan dari semua catatan</div></div></div>
           <div class="wallets list-scroll" id="wallet-list"></div>
         </div>
       </div>
+      <div class="panel-card binance-card" id="binance-overview-card" hidden><span id="binance-overview-subtitle"></span><span id="binance-total-usdt"></span><span id="binance-total-idr"></span><span id="binance-asset-count"></span></div>
     </section>
 
     <section class="view" data-view="binance" id="view-binance">
@@ -2857,7 +2921,7 @@ button,input,select,textarea{font:inherit}button{color:inherit}[hidden]{display:
           <div class="bar-list" id="group-spending-list"></div>
         </div>
         <div class="panel-card">
-          <div class="panel-head"><div><h3>Rekomendasi Terintegrasi</h3><div class="subtle">Berdasarkan transaksi dan penggunaan budget</div></div></div>
+          <div class="panel-head"><div><h3>Saran untuk bulan ini</h3><div class="subtle">Dari pola pemasukan dan pengeluaranmu</div></div></div>
           <div class="insight-list" id="smart-tip-list"></div>
         </div>
       </div>
@@ -2972,14 +3036,14 @@ button,input,select,textarea{font:inherit}button{color:inherit}[hidden]{display:
 
     <section class="view" data-view="budget" id="view-budget">
       <div class="budget-summary">
-        <div class="mini"><span class="label">Total Budget</span><b id="budget-total">-</b><span class="hint">Semua kategori aktif</span></div>
+        <div class="mini"><span class="label">Total anggaran</span><b id="budget-total">-</b><span class="hint">Semua kategori aktif</span></div>
         <div class="mini"><span class="label">Sudah Terpakai</span><b id="budget-used">-</b><span class="hint">Bulan berjalan</span></div>
         <div class="mini"><span class="label">Mendekati Limit</span><b id="budget-watch">-</b><span class="hint">Perlu dipantau</span></div>
         <div class="mini"><span class="label">Melewati Limit</span><b id="budget-over">-</b><span class="hint">Perlu tindakan</span></div>
       </div>
       <div class="panel-grid equal">
         <div class="panel-card">
-          <div class="panel-head"><div><h3>Budget Periode Terpilih</h3><div class="subtle">Klik Ubah untuk menyesuaikan limit</div></div></div>
+          <div class="panel-head"><div><span class="section-overline">BATAS BELANJA</span><h3>Anggaran per kategori</h3><div class="subtle">Sesuaikan batas sesuai kebutuhanmu</div></div></div>
           <div class="budget-card-list list-scroll" id="budget-list"></div>
         </div>
         <div class="panel-card">
@@ -3031,7 +3095,7 @@ button,input,select,textarea{font:inherit}button{color:inherit}[hidden]{display:
     <section class="view" data-view="catalog" id="view-catalog">
       <div class="panel-card">
         <div class="panel-head">
-          <div><h3>Katalog Kategori Pintar</h3><div class="subtle">Kategori, kelompok, budget bawaan, dan contoh transaksi</div></div>
+          <div><h3>Daftar kategori</h3><div class="subtle">Kelompok dan contoh transaksi untuk tiap kategori</div></div>
           <div class="catalog-toolbar">
             <input class="field search-field" id="catalog-search" placeholder="Cari kategori atau contoh...">
             <select class="field" id="catalog-type-filter"><option value="">Semua jenis</option><option value="Pengeluaran">Pengeluaran</option><option value="Pemasukan">Pemasukan</option><option value="Keduanya">Keduanya</option></select>
@@ -3067,11 +3131,11 @@ button,input,select,textarea{font:inherit}button{color:inherit}[hidden]{display:
     </section>
   </main>
   <nav class="bottom-nav" id="bottom-nav">
-    <button class="bn-item nav-item" data-view="overview" type="button"><span class="bn-ic">📊</span><span>Overview</span></button>
-    <button class="bn-item nav-item" data-view="laporanvisual" type="button"><span class="bn-ic">🧾</span><span>Visual</span></button>
-    <button class="bn-item nav-item" data-view="transactions" type="button"><span class="bn-ic">💳</span><span>Transaksi</span></button>
-    <button class="bn-item nav-item" data-view="budget" type="button"><span class="bn-ic">🎯</span><span>Budget</span></button>
-    <button class="bn-item" id="bottom-more-btn" type="button"><span class="bn-ic">☰</span><span>Lainnya</span></button>
+    <button class="bn-item nav-item" data-view="overview" type="button"><span class="bn-ic">◈</span><span>Ringkasan</span></button>
+    <button class="bn-item nav-item" data-view="transactions" type="button"><span class="bn-ic">↗</span><span>Transaksi</span></button>
+    <button class="bn-item bn-add" id="bottom-add-btn" type="button" aria-label="Tambah transaksi"><span class="bn-plus">＋</span><span>Catat</span></button>
+    <button class="bn-item nav-item" data-view="budget" type="button"><span class="bn-ic">◎</span><span>Anggaran</span></button>
+    <button class="bn-item nav-item" data-view="reports" type="button"><span class="bn-ic">▤</span><span>Laporan</span></button>
   </nav>
 </div>
 
@@ -3099,10 +3163,10 @@ button,input,select,textarea{font:inherit}button{color:inherit}[hidden]{display:
 </div>
 <div class="modal" id="budget-modal">
   <form class="modal-box" id="budget-form">
-    <div class="panel-head"><div><h3>Ubah Budget</h3><span class="subtle">Limit akan langsung dipakai oleh web dan notifikasi WhatsApp.</span></div><button class="btn small" id="close-budget-modal" type="button">Tutup</button></div>
+    <div class="panel-head"><div><h3>Atur batas anggaran</h3><span class="subtle">Batas ini dipakai untuk ringkasan web dan pengingat WhatsApp.</span></div><button class="btn small" id="close-budget-modal" type="button">Tutup</button></div>
     <div class="form-grid">
       <div class="form-group full"><label>Kategori</label><select id="budget-category" required></select></div>
-      <div class="form-group full"><label>Limit Bulanan</label><input id="budget-limit" type="number" min="0" required placeholder="Contoh: 1500000"></div>
+      <div class="form-group full"><label>Batas per bulan</label><input id="budget-limit" type="number" min="0" required placeholder="Contoh: 1500000"></div>
     </div>
     <div class="modal-actions"><button class="btn" id="cancel-budget" type="button">Batal</button><button class="btn primary" id="save-budget" type="submit">Simpan Budget</button></div>
   </form>
@@ -3142,19 +3206,19 @@ button,input,select,textarea{font:inherit}button{color:inherit}[hidden]{display:
   let categorySuggestionTimer = null;
   let activeView = hashView || localStorage.getItem("dashboardView") || "overview";
   const viewTitles = {
-    overview:"Overview",
-    binance:"Binance",
+    overview:"Ringkasan",
+    binance:"Aset Digital",
     admin:"Pengguna",
     analytics:"Analitik",
     reports:"Laporan",
     laporanvisual:"Laporan Visual",
-    trend:"Tren",
-    budget:"Budget",
+    trend:"Tren Harian",
+    budget:"Anggaran",
     goals:"Target Tabungan",
     transactions:"Transaksi",
-    catalog:"Katalog",
-    system:"Sistem",
-    commands:"Command"
+    catalog:"Kategori",
+    system:"Status Sistem",
+    commands:"Perintah Bot"
   };
   if (hashView) history.replaceState(null, "", location.pathname + location.search);
   if (params.get("access") || params.get("token")) {
@@ -3202,7 +3266,8 @@ button,input,select,textarea{font:inherit}button{color:inherit}[hidden]{display:
     document.querySelectorAll(".nav-item").forEach(button => {
       button.classList.toggle("active", button.dataset.view === activeView);
     });
-    $("view-kicker").textContent = viewTitles[activeView] || "Overview";
+    $("page-title").textContent = activeView === "overview" ? "Ringkasan keuangan" : (viewTitles[activeView] || "Ruang keuangan");
+    $("view-kicker").textContent = activeView === "overview" ? "RINGKASAN BULAN INI" : "RUANG " + (viewTitles[activeView] || "KEUANGAN").toUpperCase();
     if (store) localStorage.setItem("dashboardView", activeView);
   }
   const dateForInput = value => {
@@ -3266,7 +3331,7 @@ button,input,select,textarea{font:inherit}button{color:inherit}[hidden]{display:
     if (selectedPeriod) sessionStorage.setItem("dashboardPeriod", selectedPeriod);
     populatePeriodSelector(currentReport);
     selectedNumber = access.selectedNumber || selectedNumber;
-    $("page-title").textContent = access.isAdmin ? "Dashboard Super Admin" : "Dashboard Keuangan Pribadi";
+    $("page-title").textContent = access.isAdmin ? "Ringkasan pengguna" : "Ringkasan keuangan";
     $("subtitle").textContent = "Periode " + ((finance && finance.period) || "-") + " - " + (sys.time || "-");
     $("status-dot").className = "dot " + (sys.connected ? "online" : "offline");
     $("status-label").textContent = sys.connected ? "Online" : "Offline";
@@ -3315,6 +3380,7 @@ button,input,select,textarea{font:inherit}button{color:inherit}[hidden]{display:
       $("report-transaction-body").innerHTML = '<tr><td colspan="6" class="muted">' + esc(message) + '</td></tr>';
       $("annual-month-body").innerHTML = '<tr><td colspan="6" class="muted">' + esc(message) + '</td></tr>';
       renderReport(currentReport, {});
+      drawOverviewChart([]);
       drawTrend([]);
       renderAnalytics({});
       renderBinance(null);
@@ -3350,6 +3416,7 @@ button,input,select,textarea{font:inherit}button{color:inherit}[hidden]{display:
     renderRecent();
     renderReport(currentReport, finance);
     renderCommands(data.commands || []);
+    drawOverviewChart(finance.trend || []);
     drawTrend(finance.trend || []);
     drawSparklines(finance.trend || []);
     renderGoals();
@@ -3728,6 +3795,38 @@ button,input,select,textarea{font:inherit}button{color:inherit}[hidden]{display:
     }));
   }
 
+  function drawOverviewChart(rows) {
+    const svg = $("overview-chart");
+    const caption = $("overview-period-caption");
+    if (!svg) return;
+    const width = 900, height = 300, left = 62, right = 26, top = 22, bottom = 38;
+    if (!rows || !rows.length) {
+      svg.innerHTML = '<g class="chart-grid-line"><line x1="62" y1="65" x2="874" y2="65"></line><line x1="62" y1="125" x2="874" y2="125"></line><line x1="62" y1="185" x2="874" y2="185"></line><line x1="62" y1="245" x2="874" y2="245"></line></g><text x="450" y="158" text-anchor="middle" class="chart-axis-label">Belum ada pergerakan pada periode ini</text>';
+      if (caption) caption.textContent = "Grafik akan terisi saat transaksi tercatat";
+      return;
+    }
+    const step = Math.max(1, Math.ceil(rows.length / 18));
+    const samples = rows.filter((_, index) => index % step === 0 || index === rows.length - 1);
+    const maxValue = Math.max(...samples.flatMap(row => [Number(row.masuk || 0), Number(row.keluar || 0)]), 1);
+    const plotWidth = width - left - right, plotHeight = height - top - bottom, baseY = height - bottom;
+    const xAt = index => left + index * plotWidth / Math.max(samples.length - 1, 1);
+    const yAt = value => top + plotHeight - Number(value || 0) / maxValue * plotHeight;
+    const makePoints = field => samples.map((row, index) => ({ x:xAt(index), y:yAt(row[field]), value:Number(row[field] || 0), label:row.label || "" }));
+    const income = makePoints("masuk"), expense = makePoints("keluar");
+    const makePath = points => points.map((point, index) => (index ? "L" : "M") + point.x.toFixed(1) + " " + point.y.toFixed(1)).join(" ");
+    const makeArea = points => makePath(points) + " L " + points[points.length - 1].x.toFixed(1) + " " + baseY + " L " + points[0].x.toFixed(1) + " " + baseY + " Z";
+    const compact = value => value >= 1000000 ? (value / 1000000).toFixed(value >= 10000000 ? 0 : 1) + " jt" : value >= 1000 ? Math.round(value / 1000) + " rb" : String(Math.round(value));
+    const grid = Array.from({length:4}, (_, index) => {
+      const y = top + index * plotHeight / 3, value = maxValue * (1 - index / 3);
+      return '<line class="chart-grid-line" x1="' + left + '" y1="' + y.toFixed(1) + '" x2="' + (width-right) + '" y2="' + y.toFixed(1) + '"></line><text class="chart-axis-label" x="' + (left-10) + '" y="' + (y+4).toFixed(1) + '" text-anchor="end">' + esc(compact(value)) + '</text>';
+    }).join("");
+    const labelIndexes = [...new Set([0, Math.floor((samples.length - 1) / 2), samples.length - 1])];
+    const labels = labelIndexes.map(index => '<text class="chart-axis-label" x="' + xAt(index).toFixed(1) + '" y="' + (height-10) + '" text-anchor="middle">' + esc(samples[index].label || "") + '</text>').join("");
+    const dots = (points, kind) => points.map(point => '<circle class="chart-point ' + kind + '" cx="' + point.x.toFixed(1) + '" cy="' + point.y.toFixed(1) + '" r="3.5" style="animation-delay:' + Math.min(point.x / width * .7, .7).toFixed(2) + 's"><title>' + esc(point.label) + ': ' + esc(money(point.value)) + '</title></circle>').join("");
+    svg.innerHTML = '<defs><linearGradient id="overview-income-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--chart-income)"></stop><stop offset="1" stop-color="#70d5a9" stop-opacity="0"></stop></linearGradient><linearGradient id="overview-expense-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--chart-expense)"></stop><stop offset="1" stop-color="#ef917a" stop-opacity="0"></stop></linearGradient></defs>' + grid + '<path class="chart-area" d="' + makeArea(income) + '" fill="url(#overview-income-fill)"></path><path class="chart-area" d="' + makeArea(expense) + '" fill="url(#overview-expense-fill)"></path><path class="overview-chart-line income" d="' + makePath(income) + '"></path><path class="overview-chart-line expense" d="' + makePath(expense) + '"></path>' + dots(income,"income") + dots(expense,"expense") + labels;
+    if (caption) caption.textContent = samples.length + " titik pencatatan · " + (currentFinance.period || "periode terpilih");
+  }
+
   function drawTrend(rows) {
     const svg = $("trend-chart");
     const totalIncome = rows.reduce((sum, row) => sum + Number(row.masuk || 0), 0);
@@ -3738,7 +3837,7 @@ button,input,select,textarea{font:inherit}button{color:inherit}[hidden]{display:
     $("trend-net").textContent = money(totalIncome - totalExpense);
     $("trend-peak").textContent = peak ? peak.label : "-";
     if (!rows.length) {
-      svg.innerHTML = '<rect width="900" height="360" fill="#112029"></rect><text x="450" y="185" text-anchor="middle" fill="#9fb2bd" font-size="14">Belum ada data arus kas pada periode ini.</text>';
+      svg.innerHTML = '<text x="450" y="185" text-anchor="middle" fill="#a4aaa5" font-size="14">Belum ada arus kas pada periode ini.</text>';
       return;
     }
     const w = 900, h = 360, left = 74, right = 28, top = 30, bottom = 46;
@@ -3754,18 +3853,18 @@ button,input,select,textarea{font:inherit}button{color:inherit}[hidden]{display:
     const grid = Array.from({length:5}, (_, i) => {
       const gy = top + (i * plotH / 4);
       const value = max - (i * max / 4);
-      return '<line x1="' + left + '" y1="' + gy.toFixed(1) + '" x2="' + (w-right) + '" y2="' + gy.toFixed(1) + '" stroke="#29404d" stroke-width="1"></line><text x="' + (left-12) + '" y="' + (gy+4).toFixed(1) + '" text-anchor="end" fill="#8299a5" font-size="10">' + esc(compact(value)) + '</text>';
+      return '<line x1="' + left + '" y1="' + gy.toFixed(1) + '" x2="' + (w-right) + '" y2="' + gy.toFixed(1) + '" stroke="rgba(180,190,180,.15)" stroke-width="1"></line><text x="' + (left-12) + '" y="' + (gy+4).toFixed(1) + '" text-anchor="end" fill="#a4aaa5" font-size="10">' + esc(compact(value)) + '</text>';
     }).join("");
     const labelEvery = Math.max(1, Math.ceil(rows.length / 7));
-    const labels = rows.map((row, i) => i % labelEvery === 0 || i === rows.length - 1 ? '<text x="' + x(i).toFixed(1) + '" y="' + (h-18) + '" text-anchor="middle" fill="#8299a5" font-size="10">' + esc(row.label) + '</text>' : "").join("");
-    const dots = (pts, color) => pts.map(point => '<circle cx="' + point[0].toFixed(1) + '" cy="' + point[1].toFixed(1) + '" r="3.5" fill="' + color + '" stroke="#112029" stroke-width="2"><title>' + esc(point[3]) + ': ' + esc(money(point[2])) + '</title></circle>').join("");
+    const labels = rows.map((row, i) => i % labelEvery === 0 || i === rows.length - 1 ? '<text x="' + x(i).toFixed(1) + '" y="' + (h-18) + '" text-anchor="middle" fill="#a4aaa5" font-size="10">' + esc(row.label) + '</text>' : "").join("");
+    const dots = (pts, color) => pts.map(point => '<circle cx="' + point[0].toFixed(1) + '" cy="' + point[1].toFixed(1) + '" r="3.5" fill="' + color + '" stroke="#17201d" stroke-width="2"><title>' + esc(point[3]) + ': ' + esc(money(point[2])) + '</title></circle>').join("");
     svg.innerHTML =
-      '<defs><linearGradient id="income-area" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4fd0a2" stop-opacity=".28"></stop><stop offset="100%" stop-color="#4fd0a2" stop-opacity="0"></stop></linearGradient><linearGradient id="expense-area" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ff7c82" stop-opacity=".22"></stop><stop offset="100%" stop-color="#ff7c82" stop-opacity="0"></stop></linearGradient></defs>' +
-      '<rect width="900" height="360" fill="#112029"></rect>' + grid +
+      '<defs><linearGradient id="income-area" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#70d5a9" stop-opacity=".28"></stop><stop offset="100%" stop-color="#70d5a9" stop-opacity="0"></stop></linearGradient><linearGradient id="expense-area" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ef917a" stop-opacity=".22"></stop><stop offset="100%" stop-color="#ef917a" stop-opacity="0"></stop></linearGradient></defs>' +
+      '<g>' + grid + '</g>' +
       '<path d="' + area(income) + '" fill="url(#income-area)"></path><path d="' + area(expense) + '" fill="url(#expense-area)"></path>' +
-      '<path d="' + path(income) + '" fill="none" stroke="#4fd0a2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>' +
-      '<path d="' + path(expense) + '" fill="none" stroke="#ff7c82" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>' +
-      dots(income, "#4fd0a2") + dots(expense, "#ff7c82") + labels;
+      '<path class="overview-chart-line income" d="' + path(income) + '" fill="none" stroke="var(--chart-income)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>' +
+      '<path class="overview-chart-line expense" d="' + path(expense) + '" fill="none" stroke="var(--chart-expense)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>' +
+      dots(income, "#70d5a9") + dots(expense, "#ef917a") + labels;
   }
 
   // ── SPARKLINES PADA KARTU METRIK ─────────────────────────────
@@ -4021,8 +4120,8 @@ button,input,select,textarea{font:inherit}button{color:inherit}[hidden]{display:
   // ── TEMA GELAP / TERANG ───────────────────────────────────────
   function applyTheme(theme) {
     document.documentElement.setAttribute("data-theme", theme);
-    $("theme-toggle-icon").textContent = theme === "dark" ? "☀️" : "🌙";
-    $("theme-toggle-label").textContent = theme === "dark" ? "Mode Terang" : "Mode Gelap";
+    $("theme-mode-icon").textContent = theme === "dark" ? "☀️" : "🌙";
+    $("theme-mode-label").textContent = theme === "dark" ? "Tampilan terang" : "Tampilan gelap";
   }
   function toggleTheme() {
     const next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
@@ -4051,18 +4150,15 @@ button,input,select,textarea{font:inherit}button{color:inherit}[hidden]{display:
     });
   }
 
-  document.querySelectorAll(".nav-item").forEach(button => {
+  document.querySelectorAll(".nav-item[data-view]").forEach(button => {
     button.addEventListener("click", () => { setActiveView(button.dataset.view); $("shell").classList.remove("menu-open"); });
   });
+  document.querySelectorAll("[data-open-view]").forEach(button => button.addEventListener("click", () => setActiveView(button.dataset.openView)));
   setActiveView(activeView, false);
   $("refresh-btn").addEventListener("click", loadDashboard);
   $("menu-toggle").addEventListener("click", () => {
     const shell = $("shell");
-    if (window.matchMedia("(max-width:860px)").matches) shell.classList.toggle("menu-open");
-    else {
-      shell.classList.toggle("menu-collapsed");
-      localStorage.setItem("dashboardMenuCollapsed", shell.classList.contains("menu-collapsed") ? "1" : "0");
-    }
+    if (window.matchMedia("(max-width:900px)").matches) shell.classList.toggle("menu-open");
   });
   $("mobile-overlay").addEventListener("click", () => $("shell").classList.remove("menu-open"));
   const lvPeriodShortcut = document.getElementById("lv-period-shortcut");
@@ -4070,8 +4166,8 @@ button,input,select,textarea{font:inherit}button{color:inherit}[hidden]{display:
     const sel = $("global-period-select");
     if (sel) { sel.focus(); if (sel.showPicker) { try { sel.showPicker(); } catch (e) {} } }
   });
-  const bottomMoreBtn = document.getElementById("bottom-more-btn");
-  if (bottomMoreBtn) bottomMoreBtn.addEventListener("click", () => $("shell").classList.add("menu-open"));
+  const bottomAddBtn = document.getElementById("bottom-add-btn");
+  if (bottomAddBtn) bottomAddBtn.addEventListener("click", () => openTransactionModal(null));
   (function initTilt() {
     if (window.matchMedia("(pointer:coarse)").matches) return;
     document.addEventListener("mousemove", event => {
@@ -4087,13 +4183,11 @@ button,input,select,textarea{font:inherit}button{color:inherit}[hidden]{display:
       document.querySelectorAll(".tilt").forEach(card => { card.style.transform = ""; });
     });
   })();
-  if (localStorage.getItem("dashboardMenuCollapsed") === "1") $("shell").classList.add("menu-collapsed");
   $("global-period-select").addEventListener("change", event => {
     selectedPeriod = event.target.value;
     sessionStorage.setItem("dashboardPeriod", selectedPeriod);
     loadDashboard();
   });
-  $("token-btn").addEventListener("click", () => $("lock").classList.add("show"));
   $("quick-add-btn").addEventListener("click", () => openTransactionModal(null));
   $("transaction-search").addEventListener("input", renderRecent);
   $("transaction-filter").addEventListener("change", renderRecent);
@@ -4172,7 +4266,28 @@ button,input,select,textarea{font:inherit}button{color:inherit}[hidden]{display:
 
   // ── TEMA ────────────────────────────────────────────────────
   applyTheme(localStorage.getItem("dashboardTheme") || "dark");
-  $("theme-toggle").addEventListener("click", toggleTheme);
+  const paletteNames = { meadow:"Kebun senja", tide:"Pasang surut", orchid:"Anggrek malam", ember:"Amber hangat" };
+  function applyPalette(name) {
+    const palette = Object.prototype.hasOwnProperty.call(paletteNames, name) ? name : "meadow";
+    document.documentElement.setAttribute("data-palette", palette);
+    localStorage.setItem("dashboardPalette", palette);
+    $("theme-current-label").textContent = paletteNames[palette].split(" ")[0];
+    document.querySelectorAll("[data-palette-choice]").forEach(button => button.setAttribute("aria-pressed", String(button.dataset.paletteChoice === palette)));
+  }
+  function closeThemePicker() { $("theme-picker").hidden = true; $("theme-picker-btn").setAttribute("aria-expanded", "false"); }
+  applyPalette(localStorage.getItem("dashboardPalette") || "meadow");
+  $("theme-mode-btn").addEventListener("click", toggleTheme);
+  $("theme-picker-btn").addEventListener("click", () => {
+    const open = $("theme-picker").hidden;
+    $("theme-picker").hidden = !open;
+    $("theme-picker-btn").setAttribute("aria-expanded", String(open));
+  });
+  $("theme-picker-close").addEventListener("click", closeThemePicker);
+  document.querySelectorAll("[data-palette-choice]").forEach(button => button.addEventListener("click", () => applyPalette(button.dataset.paletteChoice)));
+  document.addEventListener("click", event => {
+    if (!$("theme-picker").hidden && !$("theme-picker").contains(event.target) && !$("theme-picker-btn").contains(event.target)) closeThemePicker();
+  });
+  document.addEventListener("keydown", event => { if (event.key === "Escape") closeThemePicker(); });
 
   // ── NOTIFIKASI ──────────────────────────────────────────────
   $("notif-btn").addEventListener("click", () => $("notif-panel").classList.toggle("show"));

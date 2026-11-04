@@ -3185,6 +3185,7 @@ html[data-palette="ember"]{--accent:#f2bd72;--accent-2:#f29170;--chart-income:#e
 <div class="toast" id="toast"></div>
 
 <script>
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
   const rupiah = new Intl.NumberFormat("id-ID", { style:"currency", currency:"IDR", maximumFractionDigits:0 });
   const params = new URLSearchParams(location.search);
   let token = params.get("access") || params.get("token") || sessionStorage.getItem("dashboardAccess") || "";
@@ -3268,6 +3269,11 @@ html[data-palette="ember"]{--accent:#f2bd72;--accent-2:#f29170;--chart-income:#e
     });
     $("page-title").textContent = activeView === "overview" ? "Ringkasan keuangan" : (viewTitles[activeView] || "Ruang keuangan");
     $("view-kicker").textContent = activeView === "overview" ? "RINGKASAN BULAN INI" : "RUANG " + (viewTitles[activeView] || "KEUANGAN").toUpperCase();
+    const activeNavItem = document.querySelector('.sidebar .nav-item[data-view="' + activeView + '"]');
+    const navGroup = activeNavItem && activeNavItem.closest("details");
+    if (navGroup) navGroup.open = true;
+    if (activeNavItem) activeNavItem.scrollIntoView({ block:"nearest", behavior:"smooth" });
+    window.scrollTo({ top:0, left:0, behavior:"smooth" });
     if (store) localStorage.setItem("dashboardView", activeView);
   }
   const dateForInput = value => {

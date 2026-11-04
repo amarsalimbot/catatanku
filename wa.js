@@ -2727,6 +2727,77 @@ html[data-palette="ember"]{--accent:#f2bd72;--accent-2:#f29170;--chart-income:#e
 @media(max-width:390px){.theme-popover{bottom:calc(76px + env(safe-area-inset-bottom))}.theme-options{gap:6px}.theme-option{gap:6px;padding:7px}.theme-swatch{width:32px;height:32px}.theme-swatch i{height:17px}.theme-option-text b{font-size:.61rem}}
 @media(prefers-reduced-motion:reduce){.theme-trigger-orb,.theme-option,.view.active .panel-card,.view.active .metric-card,.view.active .budget-card,.view.active .goal-card{animation:none!important;transition:none!important}}
 
+/* Keep desktop navigation and page content anchored to the viewport. */
+@media (min-width: 901px) {
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .shell {
+    height: 100vh;
+    height: 100dvh;
+    min-height: 0;
+    align-items: stretch;
+    overflow: hidden;
+  }
+
+  .sidebar {
+    top: 24px;
+    height: calc(100vh - 48px);
+    height: calc(100dvh - 48px);
+    min-height: 0;
+  }
+
+  .content {
+    height: calc(100vh - 48px);
+    height: calc(100dvh - 48px);
+    min-height: 0;
+    align-self: stretch;
+    margin: 0 auto;
+    padding: 0 3px 38px 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    scrollbar-gutter: stable;
+  }
+
+  .topbar {
+    top: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  html,
+  body {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .shell {
+    height: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow: visible;
+  }
+
+  .sidebar {
+    height: auto;
+    max-height: calc(100dvh - 24px);
+    min-height: 0;
+  }
+
+  .content {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    padding-bottom: calc(86px + env(safe-area-inset-bottom));
+  }
+}
+
 </style>
 </head>
 <body>
